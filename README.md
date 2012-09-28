@@ -73,8 +73,8 @@ a stream or a string to `:in` to be used as the process' standard input.
     (with-connection session
       (let [channel (ssh-sftp session)]
         (with-channel-connection channel
-          (sftp channel :cd "/remote/path")
-          (sftp channel :put "/some/file" "filename"))))))
+          (sftp channel {} :cd "/remote/path")
+          (sftp channel {} :put "/some/file" "filename"))))))
 ```
 
 SSH tunneling is also supported:
